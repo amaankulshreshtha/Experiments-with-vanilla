@@ -1,11 +1,10 @@
-import { createStore } from 'redux';
-import React from 'react';
-import ReactDOM from 'react-dom';
+import { createStore } from "redux";
+import React from "react";
+import ReactDOM from "react-dom";
 
-import counter from './reducer.js';
+import { counter } from "./reducer.js";
 /* ###############################################################
                     REDUX WITH REACT
-
 #################################################################*/
 
 const Counter = ({ counter, increment, decrement }) => {
@@ -20,11 +19,11 @@ const Counter = ({ counter, increment, decrement }) => {
 };
 
 const incrementNumber = () => {
-  store.dispatch({ type: 'ADD' });
+  store.dispatch({ type: "ADD" });
 };
 
 const decrementNumber = () => {
-  store.dispatch({ type: 'SUB' });
+  store.dispatch({ type: "SUB" });
 };
 
 const store = createStore(counter);
@@ -35,7 +34,7 @@ const render = () => {
       increment={incrementNumber}
       decrement={decrementNumber}
     />,
-    document.getElementById('app')
+    document.getElementById("app")
   );
 };
 

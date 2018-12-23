@@ -1,5 +1,5 @@
-import createStore from './redux-store-from-scratch';
-import counter from './reducer.js';
+import createStore from "./redux-store-from-scratch";
+import { counter } from "./reducer.js";
 
 /* #####################################################################
                     3 METHODS EXPOSED BY REDUX
@@ -11,10 +11,10 @@ import counter from './reducer.js';
 const store = createStore(counter);
 
 const render = () => {
-  document.getElementById('app').innerHTML = store.getState();
+  document.getElementById("app").innerHTML = store.getState();
 };
 
-const colors = ['red', 'green', 'blue', 'yellow'];
+const colors = ["red", "green", "blue", "yellow"];
 
 const backgroundColor = () => {
   const selectedIndex = Math.floor(Math.random() * colors.length);
@@ -27,8 +27,8 @@ render();
 store.subscribe(backgroundColor);
 backgroundColor();
 
-document.addEventListener('click', () => {
-  store.dispatch({ type: 'ADD' });
+document.addEventListener("click", () => {
+  store.dispatch({ type: "ADD" });
 });
 
 // ------------------------------------------------------------------------------------------------------------------------------------
