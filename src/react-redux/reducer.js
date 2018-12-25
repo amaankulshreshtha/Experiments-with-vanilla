@@ -1,47 +1,53 @@
 export const counter = (state = 0, action) => {
   switch (action.type) {
-    case "ADD":
+    case 'ADD':
       return (state += 1);
-    case "SUB":
+    case 'SUB':
       return (state -= 1);
     default:
       return state;
   }
 };
 
-export const todoReducer = (state, action) => {
+export const visibilityReducer = (state = null, action) => {
   switch (action.type) {
-    case "ADD_TODO":
-      return {
-        id: action.id,
-        title: action.title,
-        completed: false
-      };
-    case "TOGGLE_TODO": {
-      if (state.id !== action.id) {
-        return state;
+    case 'SET_VISIBILITY':
+      return 'SHOW_ALL';
+    case 'UNSET_VISIBILITY':
+      return 'HIDE_ALL';
+    case 'TOGGLE_VISIBILITY':
+      if (state === 'SHOW_ALL') {
+        return 'HIDE_ALL';
       }
-      return {
-        ...state,
-        id: action.id,
-        completed: action.completed
-      };
-    }
+      return 'SHOW_ALL';
     default:
       return state;
   }
 };
 
-export const visibilityReducer = (state, action) => {
+export const todoReducer = (state = [], action) => {
   switch (action.type) {
-    case "SET_VISIBILITY":
-      return {
-        visibility: "SHOW_ALL"
-      };
-    case "UNSET_VISIBILITY":
-      return {
-        visibility: "HIDE_ALL"
-      };
+    case 'ADD_TODO':
+      return [
+        ...state,
+        {
+          id: action.id,
+          title: action.title,
+          completed: false
+        }
+      ];
+    case 'TOGGLE_TODO': {
+      return state.map(todoItem => {
+        if (todoItem.id !== action.id) {
+          return todoItem;
+        }
+        return {
+          ...todoItem,
+          id: action.id,
+          completed: action.completed
+        };
+      });
+    }
     default:
       return state;
   }

@@ -5,4 +5,6 @@ import './styles.css';
 // import './react-redux/react-with-redux';
 // import './immutability';
 // import "./react-redux/react-redux-immutability";
-import './react-redux/reducer-composition';
+// import './react-redux/reducer-composition';
+// import './react-redux/redux-combineReducer';
+import './react-redux/redux-combineReducer-from-scratch';
