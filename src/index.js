@@ -1,4 +1,4 @@
-import './styles.css';
+import "./styles.css";
 // import './higher-order-function';
 // import './react-redux/redux-with-test';
 // import './react-redux/redux-methods';
@@ -7,4 +7,5 @@ import './styles.css';
 // import "./react-redux/react-redux-immutability";
 // import './react-redux/reducer-composition';
 // import './react-redux/redux-combineReducer';
-import './react-redux/redux-combineReducer-from-scratch';
+// import './react-redux/redux-combineReducer-from-scratch';
+import "./function-decorator";
