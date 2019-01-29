@@ -8,4 +8,7 @@ import "./styles.css";
 // import './react-redux/reducer-composition';
 // import './react-redux/redux-combineReducer';
 // import './react-redux/redux-combineReducer-from-scratch';
-import "./function-decorator";
+// import "./function-decorator";
+// import "./conditional-logic";
+// import "./custom-error-creation";
+import "./value-of-this";
